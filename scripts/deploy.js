@@ -7,15 +7,15 @@ const main = async () => {
   
     // CHANGE THIS DOMAIN TO SOMETHING ELSE! I don't want to see OpenSea full of bananas lol
     // the previous amount when it worked was 0.4
-    let txn = await domainContract.register("pipe",  {value: hre.ethers.utils.parseEther('0.3')});
+    let txn = await domainContract.register("Lincoln",  {value: hre.ethers.utils.parseEther('0.3')});
     await txn.wait();
-    console.log("Minted domain pipe.ljtron");
+    console.log("Minted domain Lincoln.ljtron");
   
-    txn = await domainContract.setRecord("pipe", "Am I a pipe or am I ljtron?");
+    txn = await domainContract.setRecord("Lincoln", "Am I a Lincoln or am I ljtron?");
     await txn.wait();
-    console.log("Set record for pipe.ljtron");
+    console.log("Set record for Lincoln.ljtron");
   
-    const address = await domainContract.getAddress("pipe");
+    const address = await domainContract.getAddress("Lincoln");
     console.log("Owner of domain pipe:", address);
   
     const balance = await hre.ethers.provider.getBalance(domainContract.address);
